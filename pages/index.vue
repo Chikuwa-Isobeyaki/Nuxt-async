@@ -4,7 +4,7 @@
       <ul>
         <!-- データを追跡しやすいようにv-for:keyを設定。公式の方でも指定を推奨されている -->
         <li v-for="user in users" :key="user.id">
-          {{ user.id }}, {{ user.name }}
+          {{ user.id }}, {{ user.name }}, {{ user.company.name }}
         </li>
       </ul>
   </section>
