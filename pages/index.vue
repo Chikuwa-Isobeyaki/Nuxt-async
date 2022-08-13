@@ -1,10 +1,19 @@
 <template>
   <section class="container">
-      <p>Hello World</p>
+      {{ users[0].id }}, {{ users[0].name }}
   </section>
 </template>
 
 
 <script>
-export default {}
+const axios = require('axios')
+let url = "https://jsonplaceholder.typicode.com/users"
+export default {
+  asyncData({ params }) {
+    return axios.get(url)
+      .then((res)=> {
+        return { users: res.data }
+      })
+  }
+}
 </script>
